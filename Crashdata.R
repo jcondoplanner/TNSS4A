@@ -5,4 +5,4 @@ crashdatafilter <- crashdata %>% filter(between(CollisionDte, as.POSIXct('2017-0
 crashdatafatalities <- crashdatafilter %>% filter(NbrFatalitiesNmb >=1)
 fatalities <- crashdatafatalities %>% select(CollisionDte, NbrFatalitiesNmb, CityCde, CountyStateCde)
 fatalities <- fatalities %>% rename(City=CityCde)
-Columbia <- fatalities %>% filter(City == 0470)
+acsdata<- get_acs(geography='place', variables = c("B02001_001"), year=2021, output="wide")
