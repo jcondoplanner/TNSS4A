@@ -7,3 +7,4 @@ crashdatafatalities <- crashdatafilter %>% filter(NbrFatalitiesNmb >=1)
 fatalities <- crashdatafatalities %>% select(CollisionDte, NbrFatalitiesNmb, CityCde, CountyStateCde)
 fatalities <- fatalities %>% rename(City=CityCde)
 acsdata<- get_acs(geography='place', variables = c("B02001_001"), year=2021, output="wide")
+##From here i just searched in the data frame for the requested city codes, based on the vwLookup_City.txt document codes
