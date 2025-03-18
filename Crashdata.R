@@ -1,5 +1,6 @@
 crashdata <- read.csv("output3.csv")
 library(tidyverse)
+library(tidycensus)
 crashdata <- crashdata %>% mutate(CollisionDte = as.POSIXct(CollisionDte, format = "%Y-%m-%d %H:%M:%S"))
 crashdatafilter <- crashdata %>% filter(between(CollisionDte, as.POSIXct('2017-01-01 00:00:00'), as.POSIXct('2021-01-01 23:59:59')))
 crashdatafatalities <- crashdatafilter %>% filter(NbrFatalitiesNmb >=1)
